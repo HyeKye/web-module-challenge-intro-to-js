@@ -19,7 +19,7 @@ Do the following:
 
    HINT: no function required
 */
-var votingAge = 18
+var age = 18
 if (age >= 18) {
   console.log("true")
  } else {
@@ -258,7 +258,7 @@ function startGame() {
   var getcomputer = computer();
   console.log(getcomputer);
   var endGame = winner(getuser, getcomputer);
-  alert(endGame);
+  return(endGame);
 }
 console.log(startGame())
 
