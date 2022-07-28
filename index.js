@@ -141,7 +141,7 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(age, lbs){
+function hungryDog(lbs, age){
   if (age >= 1) {
       if (lbs <= 5){
         return(0.05 * lbs)
@@ -157,20 +157,20 @@ function hungryDog(age, lbs){
       }
     } 
   else if (age < 1) {
-      if (lbs >= 2 && lbs < 4){
+      if (age > 0.19 && age < 0.4){
         return(0.10 * lbs)
       }
-      if (lbs > 4 && lbs < 7){
+      if (age > 0.4 && age < 0.7){
         return(0.05 * lbs)
       }
-      if (lbs >= 7 && lbs <= 12){
+      if (age >= 0.7 && age <= 1){
         return(0.04 * lbs)
       } else {
         return 'too fat'
       }
   }
 }
-console.log(hungryDog(5, 20))
+console.log(hungryDog(20, 5))
 
 
 
@@ -195,72 +195,44 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 
-function user() {
-  var rock = "rock";
-  var scissors = "scissors";
-  var paper = "paper";
-
-  if (rock) {
-    return "rock"
-  }
-  if (scissors) {
-    return "scissors"
-  }
-  if (paper) {
-    return "paper";
-  }
-}
-function computer() {
-  var computer = Math.random();
+let computer = Math.random(); 
   if (computer < 0.34) {
     computer = "rock";
   }
-
   else if (computer <= 0.67) {
     computer = "paper";
   }
   else {
     computer = "scissors";
-  }
+  } 
 
-  return computer;
-}
-
-function winner(user, computer) {
-  if (user === computer) {
-    return "The result is a tie!";
+function game(user, computer) {
+if (user === computer) {
+    return "it's a tie";
   }
   if (user === "rock") {
     if (computer === "scissors") {
-      return "You win!";
+      return "you win!";
     } else {
-      return "You Lose!";
+      return "you lose!";
     }
   }
   if (user === "paper") {
     if (computer === "rock") {
-      return "You win!";
+      return "you win!";
     } else {
-      return "You Lose!";
+      return "you lose!";
     }
   }
   if (user === "scissors") {
     if (computer === "paper") {
-      return "You win!";
+      return "you win!";
     } else {
-      return "You Lose!";
-    }
-  }
+      return "you lose!";
+    }  
 }
-function startGame() {
-  var getuser = user();
-  console.log(getuser);
-  var getcomputer = computer();
-  console.log(getcomputer);
-  var endGame = winner(getuser, getcomputer);
-  return(endGame);
 }
-console.log(startGame())
+console.log(game('rock', computer))
 
 
 
@@ -275,11 +247,10 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(a){
-  let miles = a * 1.60934
-  console.log(miles)
+function miles(km){
+  return km * 0.621371
 }
-console.log(miles(100))
+miles(10);
 
 
 
@@ -291,9 +262,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(a){
-  let cm = a / 30.48
-  console.log(cm)
+function feet(cm){
+  return cm / 30.48
 }
 console.log(feet(9000))
 
@@ -313,31 +283,30 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(){
+function annoyingSong(num){
   var word = "bottles";
-  var count = 99;
-  while (count > 0) {
-    if (count == 1){
-      var word = "bottle"
+  while (num > 0) {
+    if (num == 1){
+      var num = "bottle"
     }
-      console.log(count + " " + word + " of soda on the wall");
-      console.log(count + " " + word + " of soda,");
+      console.log(num + " " + word + " of soda on the wall");
+      console.log(num + " " + word + " of soda,");
       console.log("Take one down, pass it around,");
-      count = count - 1;
-      if (count > 0) {
-        if (count == 1){
+      num = num - 1;
+      if (num > 0) {
+        if (num == 1){
           var word = "bottle"
         }
-          console.log(count + " " + word + " of soda on the wall.");
+          console.log(num + " " + word + " of soda on the wall.");
       } else {
-        if (count < 1){
+        if (num < 1){
           var word = "bottles"
         }
           console.log("No more " + word + " of soda on the wall.");
       }
   }
   }
-  console.log(annoyingSong())
+ annoyingSong(5);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
